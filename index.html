@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGNAL_LOST</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+      /* Global Reset & Custom Keyframes */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #050505;
+        overflow-x: hidden;
+        user-select: none;
+      }
+      
+      @keyframes flicker {
+        0% { opacity: 0.97; }
+        5% { opacity: 0.9; }
+        10% { opacity: 0.95; }
+        15% { opacity: 0.85; }
+        20% { opacity: 0.98; }
+        50% { opacity: 0.92; }
+        100% { opacity: 0.99; }
+      }
+
+      @keyframes tracking-scan {
+        0% { transform: translateY(-100vh); }
+        100% { transform: translateY(100vh); }
+      }
+
+      @keyframes noise {
+        0%, 100% { transform: translate(0, 0); }
+        10% { transform: translate(-5px, -10px); }
+        20% { transform: translate(-15px, 5px); }
+        30% { transform: translate(7px, -25px); }
+        40% { transform: translate(-5px, 25px); }
+        50% { transform: translate(-15px, 10px); }
+        60% { transform: translate(15px, 0px); }
+        70% { transform: translate(0px, 15px); }
+        80% { transform: translate(3px, 35px); }
+        90% { transform: translate(-10px, 10px); }
+      }
+
+      .font-vhs { font-family: 'VT323', monospace; }
+      .font-terminal { font-family: 'Share Tech Mono', monospace; }
+      .font-punk { font-family: 'Special Elite', cursive; }
+      
+      .crt-flicker { animation: flicker 0.15s infinite; }
+      .vhs-tracking { animation: tracking-scan 4s linear infinite; }
+      
+      /* Scrollbar hiding */
+      ::-webkit-scrollbar {
+          width: 0px;
+          background: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
